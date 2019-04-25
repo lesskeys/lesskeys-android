@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c2fcfcfc"
+    android:id="@+id/swiperefresh"
+    tools:context="at.ac.uibk.keylessapp.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout = "@layout/action_bar"
+            android:id="@+id/app_bar">
+        </include>
+
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_alignStart="@+id/textNFCon"
+            android:layout_below="@+id/textNFCon"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/add_background"
+            android:drawableTop="@drawable/ic_add_box"
+            android:text="schlüssel hinzufügen"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_keys"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_alignTop="@+id/button_add"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/authorised_background"
+            android:drawableTop="@drawable/ic_key"
+            android:text="schlüssel verwalten "
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textNFCon"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_alignBaseline="@+id/textNFCoff"
+            android:layout_alignBottom="@+id/textNFCoff"
+            android:layout_alignStart="@+id/textNFCoff"
+            android:layout_marginRight="7dp"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/info_background"
+            android:drawableLeft="@drawable/ic_info"
+            android:text="Ihr Telefon kann nun als Schlüssel verwendet werden. Dazu das Telefon einfach an das NFC-Modul an der Türe halten."
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textNFCoff"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/buttonlogout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/info_background"
+            android:drawableLeft="@drawable/ic_info"
+            android:text="Das NFC ist auf ihrem Gerät deaktiviert. Bitte aktivieren Sie NFC in ihren Einstellungen."
+            android:textColor="#fa0000"
+            android:textSize="15sp"
+            android:visibility="invisible" />
+
+
+        <Button
+            android:id="@+id/button_accessprotocol"
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:layout_alignEnd="@+id/button_remote_doors"
+            android:layout_alignTop="@+id/button_remoteMessages"
+            android:background="@drawable/protocolbutton_background"
+            android:drawableLeft="@drawable/ic_log"
+            android:text="Protokoll"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_usersettings"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_alignStart="@+id/button_add"
+            android:layout_below="@+id/button_add"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/usersettings_background"
+            android:drawableTop="@drawable/ic_settings"
+            android:text="Einstellung"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/button_subUser"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_alignEnd="@+id/textNFCon"
+            android:layout_alignTop="@+id/button_keys"
+            android:background="@drawable/subuser_backgorund"
+            android:drawableTop="@drawable/ic_person"
+            android:text="Unternutzer verwalten"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_remoteMessages"
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:layout_alignStart="@+id/button_usersettings"
+            android:layout_below="@+id/button_usersettings"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/protocolbutton_background"
+            android:drawableLeft="@drawable/ic_bell"
+            android:text="Klingel - Historie"
+            android:textColor="#FFFFFF" />
+
+
+        <Button
+            android:id="@+id/buttonlogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/app_bar"
+            android:layout_alignEnd="@+id/textNFCon"
+            android:background="#003362"
+            android:drawableTop="@drawable/ic_logout"
+            android:paddingTop="10dp" />
+
+        <Button
+            android:id="@+id/button_remote_doors"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_alignStart="@+id/button_subUser"
+            android:layout_alignTop="@+id/buttonFoundKey"
+            android:background="@drawable/remotelock_background"
+            android:drawableTop="@drawable/ic_lock_open"
+            android:text="Remote Türöffnen"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/buttonFoundKey"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
+            android:layout_above="@+id/button_remoteMessages"
+            android:layout_alignStart="@+id/button_keys"
+            android:background="@drawable/foundkey_background"
+            android:drawableTop="@drawable/ic_foundkey"
+            android:text="gefundener Schlüssel"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

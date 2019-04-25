@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/swiperefresh"
+    tools:context="at.ac.uibk.keylessapp.MainActivityVisitor">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout = "@layout/action_bar"
+            android:id="@+id/app_bar">
+        </include>
+
+        <TextView
+            android:id="@+id/textNFCon"
+            android:layout_width="370dp"
+            android:layout_height="140dp"
+            android:layout_alignBaseline="@+id/textNFCoff"
+            android:layout_alignBottom="@+id/textNFCoff"
+            android:layout_alignStart="@+id/textNFCoff"
+            android:background="@drawable/info_background"
+            android:drawableLeft="@drawable/ic_info"
+            android:text="Ihr Telefon kann nun als Schlüssel verwendet werden. Dazu das Telefon einfach an das NFC-Modul an der Türe halten."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textNFCoff"
+            android:layout_width="370dp"
+            android:layout_height="140dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/info_background"
+            android:drawableLeft="@drawable/ic_info"
+            android:text="Das NFC ist auf ihrem Gerät deaktiviert. Bitte aktivieren Sie NFC in ihren Einstellungen."
+            android:textColor="#fa0000"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+        <Button
+            android:id="@+id/buttonlogoutvisitor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/app_bar"
+            android:layout_alignEnd="@+id/textNFCon"
+            android:background="#003362"
+            android:drawableTop="@drawable/ic_logout"
+            android:paddingTop="10dp" />
+
+        <ImageView
+            android:id="@+id/imageViewVisitor"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/textNFCon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="74dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

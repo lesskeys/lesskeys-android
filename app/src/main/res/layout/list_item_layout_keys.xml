@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="#c2fcfcfc"
+        app:srcCompat="@drawable/ic_system_key" />
+
+    <TextView
+        android:id="@+id/keyName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:text="KeyName" />
+
+    <ImageButton
+        android:id="@+id/keyEditButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_edit_key"
+        android:background="@drawable/systemkeybuttons_background"
+        android:visibility="invisible"
+    />
+
+ <ImageButton
+     android:id="@+id/keyTimeButton"
+     android:layout_width="40dp"
+     android:layout_height="40dp"
+     android:layout_marginLeft="5dp"
+     android:layout_marginTop="5dp"
+     android:background="@drawable/systemkeybuttons_background"
+     android:src="@drawable/ic_access_alarms"
+     android:visibility="invisible"
+     />
+
+ <ImageButton
+     android:id="@+id/keyModeButton"
+     android:layout_width="40dp"
+     android:layout_height="40dp"
+     android:layout_marginLeft="5dp"
+     android:layout_marginTop="5dp"
+     android:background="@drawable/systemkeybuttons_background"
+     android:src="@drawable/ic_authorization"
+     android:layout_marginRight="10dp"/>
+
+</LinearLayout>

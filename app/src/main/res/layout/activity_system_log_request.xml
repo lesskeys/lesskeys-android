@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c2fcfcfc">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/action_bar"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView_message_content_systemlogrequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textViewReason"
+            android:layout_alignTop="@+id/textViewReason"
+            android:layout_marginTop="51dp"
+            android:text="Nachrichteninhalt"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/button_systemLogAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView_message_content_systemlogrequest"
+            android:layout_below="@+id/textView_message_content_systemlogrequest"
+            android:layout_marginTop="68dp"
+            android:text="OK" />
+
+        <TextView
+            android:id="@+id/textView_systemLogRequestInformation"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp"
+            android:text="Der Admin möchte auf folgenden Ihrer Logs zugreifen: "
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textViewLogType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView_systemLogRequestInformation"
+            android:layout_below="@+id/textView_systemLogRequestInformation"
+            android:layout_marginTop="26dp"
+            android:text="TYP" />
+
+        <TextView
+            android:id="@+id/textViewReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textViewLogType"
+            android:layout_below="@+id/textViewLogType"
+            android:layout_marginTop="30dp"
+            android:text="Begründung"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/button_systemLogDecline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button_systemLogAccept"
+            android:layout_alignBottom="@+id/button_systemLogAccept"
+            android:layout_alignEnd="@+id/textView_systemLogRequestInformation"
+            android:text="Abbrechen" />
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

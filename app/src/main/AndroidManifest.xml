@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="at.ac.uibk.keylessapp">
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true"
+        />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="true" />
+
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".LogInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="at.ac.uibk.keylessapp.CardEmulationService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+        </service>
+
+        <service
+            android:name=".Services.RemoteMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".AuthorisedActivity" />
+        <activity android:name=".UserActivity"
+            android:label="Benutzerübersicht"/>
+        <activity android:name=".KeyActivity"
+            android:label="Schlüsselübersicht"/>
+        <activity android:name=".SubUserActivity"
+            android:label="Unternutzer"/>
+        <activity android:name=".CertificateActivity" />
+        <activity android:name=".AccessProtocolActivity"
+            android:label="Zugangsprotokoll"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".NfcActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="Neuen Schlüssel hinzufügen"  android:screenOrientation="portrait" />
+        <activity android:name=".RemoteMessageActivity"
+            android:label="Klingelhistorie" />
+        <activity android:name=".FoundKeyActivity"
+            android:label="Gefundener Schlüssel" android:screenOrientation="portrait"/>
+        <activity android:name=".SystemLogRequestListActivity"
+            android:label="Log-Anfragen" android:screenOrientation="portrait"/>
+        <activity android:name=".RemoteDoorActivity"
+            android:label="Schlösser">
+            <intent-filter>
+                <action android:name="at.ac.uibk.keylessapp_TARGET_NOTIFICATION"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SystemLogRequestActivity"
+            android:label="Benachrichtigung">
+            <intent-filter>
+                <action android:name="at.ac.uibk.keylessapp_TARGET_SYSTEMLOG_NOTIFICATION"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivityVisitor"/>
+    </application>
+
+</manifest>
